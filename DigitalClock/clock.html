@@ -10,7 +10,7 @@
     <div id="DigitalClock"></div>
     <script type="text/javascript">
         function showTime(){
-            var date = new Date();
+            var date = new Date(); // instantiate date class. or take date reference
             var h = date.getHours();
             var m = date.getMinutes();
             var s = date.getSeconds();
@@ -20,10 +20,13 @@
                 h = 12; // 12 hr formate
             }
             if(h>12){
-                h = h - 12;
-                session = "PM";
+                h = h - 12; // 12 hr formate
+                session = "PM"; // add PM after 12 hr
             }
-
+            h = (h<10)?"0"+h:h; // add "0" infront of hr digit
+            m = (m<10)?"0"+m:m; // add "0" infront of min digit
+            s = (s<10)?"0"+s:s; // add "0" infront of sec digit
+            
             document.getElementById("DigitalClock").innerHTML = h + ":" + m + ":" + s + " " + session; 
             setTimeout(showTime,1000);
         }
