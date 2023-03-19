@@ -11,7 +11,7 @@
     <table border="0">
         <tr>
             <td colspan="3"><input type="text" id="result"></td>
-            <td><input type="button" value="c" onclick="clear()"></td>
+            <td><input type="button" value="c" onclick="clr()"></td>
         </tr>
         <tr>
             <td><input type="button" value="1" onclick="display('1')"></td>
@@ -39,8 +39,8 @@
         </tr>
     </table>
     <script type="text/javascript">
-        function clear(){
-
+        function clr(){
+            document.getElementById("result").value = " ";
         }
         function display(val){
             document.getElementById("result").value+=val;
